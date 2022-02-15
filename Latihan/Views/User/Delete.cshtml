@@ -1,0 +1,28 @@
+@model latihan.vscode.web.Models.MUser
+
+<div class="container mt-2"> 
+<h4>Yakin Menghapus User ini ?</h4>
+<div>
+  
+    <dl class="dl-horizontal">
+        <dt>
+           Nama
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+           Alamat
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="UserId" />
+        <input class="btn btn-danger w-50" type="submit" value="Hapus" class="btn btn-default" />
+        <a class="btn btn-warning w-50 mt-2" asp-action="Index">Kembali</a>
+    </form>
+</div>
+</div>

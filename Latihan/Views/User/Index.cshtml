@@ -1,0 +1,43 @@
+@model IEnumerable<latihan.vscode.web.Models.MUser>
+
+
+<div class="container mt-2">  
+    <a class="btn btn-success" asp-action="Create">Tambahkan User</a>
+    <table class="table mt-2">
+        <thead>
+            <tr>
+                <th>
+                   No
+                </th>
+                <th>
+                   Nama
+                </th>
+                <th>
+                    Alamat
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+     @{
+     var no = 1;
+    }
+    @foreach (var item in Model) {
+            <tr class="small">
+                <td width="3%">
+                     <span>@no</span>
+                </td>
+                <td width="32%">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td width="50%">
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                 <td width="15%">
+                    <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-id="@item.UserId">Edit</a>
+                    <a class="btn btn-sm btn-danger"asp-action="Delete" asp-route-id="@item.UserId">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>

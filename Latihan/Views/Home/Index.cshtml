@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+ 
+<div id="sldCarousel" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#sldCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#sldCarousel" data-slide-to="1" ></li>
+    <li data-target="#sldCarousel" data-slide-to="2" ></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img style="width:100%" class="first-slide" src="~/images/img1.PNG" alt="First slide">
+    </div> 
+    <div class="carousel-item">
+      <img style="width:100%" class="first-slide" src="~/images/img2.PNG" alt="First slide">
+    </div> 
+    <div class="carousel-item">
+      <img style="width:100%" class="first-slide" src="~/images/img3.PNG" alt="First slide">
+    </div> 
+  </div>
+  <a class="carousel-control-prev" href="#sldCarousel" role="button" data-slide="prev"> 
+    <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+    <span class="sr-only">prev</span>
+  </a>
+  <a class="carousel-control-next" href="#sldCarousel" role="button" data-slide="next"> 
+    <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+    <span class="sr-only">next</span>
+  </a>
+</div>
