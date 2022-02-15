@@ -11,6 +11,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using latihan.vscode.web.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Hosting;
 
 namespace latihan.vscode.web
 {
@@ -26,21 +29,27 @@ namespace latihan.vscode.web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<CookiePolicyOptions>(options =>
+            services.AddControllersWithViews();
+            services.AddDbContext<latihanContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LatihanDB")));
+
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
             {
-                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
+                options.Cookie.Name = ".Trvel.Session";
+                options.Cookie.IsEssential = true;
             });
 
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => false;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-            services.AddDbContext<latihanContext>(options => options.UseSqlServer(Configuration.GetConnectionString("latihanDB")));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -49,19 +58,30 @@ namespace latihan.vscode.web
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
+            var supportedCultures = new[] { new CultureInfo("id-ID") };
+
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("id-ID"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            });
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseCookiePolicy();
+            app.UseRouting();
+            app.UseAuthorization();
 
-            app.UseMvc(routes =>
+            app.UseSession();
+
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
+                endpoints.MapControllerRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

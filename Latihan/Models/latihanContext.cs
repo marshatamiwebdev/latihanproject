@@ -22,7 +22,7 @@ namespace latihan.vscode.web.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=PCLP-PC;Database=latihan;Trusted_Connection=True;MultipleActiveResultSets=true;");
+                optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=LatihanDB;Trusted_Connection=True;MultipleActiveResultSets=true");
             }
         }
 
