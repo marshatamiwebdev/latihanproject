@@ -34,8 +34,8 @@ namespace LatihanAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "LatihanAPI", Version = "v1" });
             });           
 
-            services.AddDbContext<LatihanAPIContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("LatihanAPIContext")));
+            //services.AddDbContext<LatihanAPIContext>(options =>
+            //        options.UseSqlServer(Configuration.GetConnectionString("LatihanAPIContext")));
             
         }
 

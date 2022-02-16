@@ -1,0 +1,7 @@
+C:\Users\moch.setiawan\source\repos\latihanproject\LatihanAPI\obj\Debug\net5.0\c.csproj.AssemblyReference.cache
+C:\Users\moch.setiawan\source\repos\latihanproject\LatihanAPI\obj\Debug\net5.0\c.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\moch.setiawan\source\repos\latihanproject\LatihanAPI\obj\Debug\net5.0\c.AssemblyInfoInputs.cache
+C:\Users\moch.setiawan\source\repos\latihanproject\LatihanAPI\obj\Debug\net5.0\c.AssemblyInfo.cs
+C:\Users\moch.setiawan\source\repos\latihanproject\LatihanAPI\obj\Debug\net5.0\c.csproj.CoreCompileInputs.cache
+C:\Users\moch.setiawan\source\repos\latihanproject\LatihanAPI\obj\Debug\net5.0\c.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\moch.setiawan\source\repos\latihanproject\LatihanAPI\obj\Debug\net5.0\c.MvcApplicationPartsAssemblyInfo.cache
