@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
+using LatihanAPI.Data;
 
 namespace LatihanAPI
 {
@@ -32,11 +33,11 @@ namespace LatihanAPI
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "LatihanAPI", Version = "v1" });
-            });           
+            });
 
-            //services.AddDbContext<LatihanAPIContext>(options =>
-            //        options.UseSqlServer(Configuration.GetConnectionString("LatihanAPIContext")));
-            
+            services.AddDbContext<LatihanDBContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("LatihanAPIContext")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
