@@ -14,20 +14,20 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "C:\Users\moch.setiawan\source\repos\latihanproject\Latihan\Views\_ViewImports.cshtml"
-using latihan.vscode.web;
+using Latihan;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\moch.setiawan\source\repos\latihanproject\Latihan\Views\_ViewImports.cshtml"
-using latihan.vscode.web.Models;
+using Latihan.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e180372d7098eff674755fe2f6ba7e0919f454a0", @"/Views/Contact/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bb180277f4186cedc3460f572ddee51ee8f95e1d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a445e2abb69da6427d7ac495a3fc7fbc7154e334", @"/Views/_ViewImports.cshtml")]
     public class Views_Contact_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

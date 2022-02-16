@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "OrGHdHFIt5w4zznHWer2jSr8FyX16rSHeIGeVhjwg3I58Kirz3xVCHPp5feU24OKV4FS3bFa3FQbp8gM2hq4kg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\moch.setiawan\\source\\repos\\latihanproject\\LatihanTypeScript\\LatihanTypeScript.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\moch.setiawan\\.nuget\\packages\\microsoft.typescript.msbuild\\4.5.3\\microsoft.typescript.msbuild.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}

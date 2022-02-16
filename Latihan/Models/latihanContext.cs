@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace latihan.vscode.web.Models
+namespace Latihan.Models
 {
     public partial class latihanContext : DbContext
     {

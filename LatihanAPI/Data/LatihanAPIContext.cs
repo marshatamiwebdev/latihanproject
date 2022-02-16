@@ -12,5 +12,5 @@ using LatihanAPI.Models;
         {
         }
 
-        public DbSet<LatihanAPI.Models.User> User { get; set; }
+        public DbSet<LatihanAPI.Models.MUser> MUser { get; set; }
     }

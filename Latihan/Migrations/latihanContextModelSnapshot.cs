@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using latihan.vscode.web.Models;
+using Latihan.Models;
 
 namespace Latihan.Migrations
 {
@@ -18,7 +18,7 @@ namespace Latihan.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("latihan.vscode.web.Models.MMateri", b =>
+            modelBuilder.Entity("Latihan.Models.MMateri", b =>
                 {
                     b.Property<int>("MateriId")
                         .ValueGeneratedOnAdd()
@@ -43,7 +43,7 @@ namespace Latihan.Migrations
                     b.ToTable("M_Materi");
                 });
 
-            modelBuilder.Entity("latihan.vscode.web.Models.MUser", b =>
+            modelBuilder.Entity("Latihan.Models.MUser", b =>
                 {
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()

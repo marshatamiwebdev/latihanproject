@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iis": {
-      "applicationUrl": "http://localhost/latihan.vscode.web",
+      "applicationUrl": "http://localhost/Latihan",
       "sslPort": 0
     },
     "iisExpress": {
@@ -19,7 +19,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "latihan.vscode.web": {
+    "Latihan": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

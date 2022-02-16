@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace latihan.vscode.web.Models
+namespace Latihan.Models
 {
     public partial class MMateri
     {

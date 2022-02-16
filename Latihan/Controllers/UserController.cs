@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using latihan.vscode.web.Models;
+using Latihan.Models;
 
-namespace latihan.vscode.web.Controllers
+namespace Latihan.Controllers
 {
     public class UserController : Controller
     {

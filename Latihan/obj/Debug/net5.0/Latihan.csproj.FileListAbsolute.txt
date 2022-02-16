@@ -148,5 +148,5 @@ C:\Users\moch.setiawan\source\repos\latihanproject\Latihan\obj\Debug\net5.0\Lati
 C:\Users\moch.setiawan\source\repos\latihanproject\Latihan\obj\Debug\net5.0\ref\Latihan.dll
 C:\Users\moch.setiawan\source\repos\latihanproject\Latihan\obj\Debug\net5.0\Latihan.pdb
 C:\Users\moch.setiawan\source\repos\latihanproject\Latihan\obj\Debug\net5.0\Latihan.genruntimeconfig.cache
-C:\Users\moch.setiawan\source\repos\latihanproject\Latihan\obj\Debug\net5.0\Latihan.csproj.AssemblyReference.cache
 C:\Users\moch.setiawan\source\repos\latihanproject\Latihan\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\moch.setiawan\source\repos\latihanproject\Latihan\obj\Debug\net5.0\Latihan.csproj.AssemblyReference.cache
