@@ -5,13 +5,11 @@ using System.Collections.Generic;
 
 namespace LatihanAPI.Models
 {
-    public partial class Muser
+    public partial class Mstudent
     {
-        public int UserId { get; set; }
-        public int Age { get; set; }
-        public string UserName { get; set; }
-        public string FullName { get; set; }
-        public string Adress { get; set; }
+        public int StudentId { get; set; }
+        public string StudentCode { get; set; }
+        public int? UserId { get; set; }
         public string CreatedBy { get; set; }
         public DateTime? CreatedDate { get; set; }
         public bool? Status { get; set; }

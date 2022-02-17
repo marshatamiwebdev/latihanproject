@@ -23,36 +23,36 @@ namespace LatihanAPI.Controllers
 
         // GET: api/User
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<MUser>>> GetMUsers()
+        public async Task<ActionResult<IEnumerable<Muser>>> GetMusers()
         {
-            return await _context.MUsers.ToListAsync();
+            return await _context.Musers.ToListAsync();
         }
 
         // GET: api/User/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<MUser>> GetMUser(int id)
+        public async Task<ActionResult<Muser>> GetMuser(int id)
         {
-            var mUser = await _context.MUsers.FindAsync(id);
+            var muser = await _context.Musers.FindAsync(id);
 
-            if (mUser == null)
+            if (muser == null)
             {
                 return NotFound();
             }
 
-            return mUser;
+            return muser;
         }
 
         // PUT: api/User/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMUser(int id, MUser mUser)
+        public async Task<IActionResult> PutMuser(int id, Muser muser)
         {
-            if (id != mUser.UserId)
+            if (id != muser.UserId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(mUser).State = EntityState.Modified;
+            _context.Entry(muser).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace LatihanAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MUserExists(id))
+                if (!MuserExists(id))
                 {
                     return NotFound();
                 }
@@ -76,33 +76,33 @@ namespace LatihanAPI.Controllers
         // POST: api/User
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<MUser>> PostMUser(MUser mUser)
+        public async Task<ActionResult<Muser>> PostMuser(Muser muser)
         {
-            _context.MUsers.Add(mUser);
+            _context.Musers.Add(muser);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMUser", new { id = mUser.UserId }, mUser);
+            return CreatedAtAction("GetMuser", new { id = muser.UserId }, muser);
         }
 
         // DELETE: api/User/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMUser(int id)
+        public async Task<IActionResult> DeleteMuser(int id)
         {
-            var mUser = await _context.MUsers.FindAsync(id);
-            if (mUser == null)
+            var muser = await _context.Musers.FindAsync(id);
+            if (muser == null)
             {
                 return NotFound();
             }
 
-            _context.MUsers.Remove(mUser);
+            _context.Musers.Remove(muser);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool MUserExists(int id)
+        private bool MuserExists(int id)
         {
-            return _context.MUsers.Any(e => e.UserId == id);
+            return _context.Musers.Any(e => e.UserId == id);
         }
     }
 }

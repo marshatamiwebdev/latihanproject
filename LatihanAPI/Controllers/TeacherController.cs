@@ -12,47 +12,47 @@ namespace LatihanAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MateriController : ControllerBase
+    public class TeacherController : ControllerBase
     {
         private readonly LatihanDBContext _context;
 
-        public MateriController(LatihanDBContext context)
+        public TeacherController(LatihanDBContext context)
         {
             _context = context;
         }
 
-        // GET: api/Materi
+        // GET: api/Teacher
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Mmateri>>> GetMmateris()
+        public async Task<ActionResult<IEnumerable<Mteacher>>> GetMteachers()
         {
-            return await _context.Mmateris.ToListAsync();
+            return await _context.Mteachers.ToListAsync();
         }
 
-        // GET: api/Materi/5
+        // GET: api/Teacher/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Mmateri>> GetMmateri(int id)
+        public async Task<ActionResult<Mteacher>> GetMteacher(int id)
         {
-            var mmateri = await _context.Mmateris.FindAsync(id);
+            var mteacher = await _context.Mteachers.FindAsync(id);
 
-            if (mmateri == null)
+            if (mteacher == null)
             {
                 return NotFound();
             }
 
-            return mmateri;
+            return mteacher;
         }
 
-        // PUT: api/Materi/5
+        // PUT: api/Teacher/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMmateri(int id, Mmateri mmateri)
+        public async Task<IActionResult> PutMteacher(int id, Mteacher mteacher)
         {
-            if (id != mmateri.MateriId)
+            if (id != mteacher.TeacherId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(mmateri).State = EntityState.Modified;
+            _context.Entry(mteacher).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace LatihanAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MmateriExists(id))
+                if (!MteacherExists(id))
                 {
                     return NotFound();
                 }
@@ -73,36 +73,36 @@ namespace LatihanAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Materi
+        // POST: api/Teacher
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Mmateri>> PostMmateri(Mmateri mmateri)
+        public async Task<ActionResult<Mteacher>> PostMteacher(Mteacher mteacher)
         {
-            _context.Mmateris.Add(mmateri);
+            _context.Mteachers.Add(mteacher);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMmateri", new { id = mmateri.MateriId }, mmateri);
+            return CreatedAtAction("GetMteacher", new { id = mteacher.TeacherId }, mteacher);
         }
 
-        // DELETE: api/Materi/5
+        // DELETE: api/Teacher/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteMmateri(int id)
+        public async Task<IActionResult> DeleteMteacher(int id)
         {
-            var mmateri = await _context.Mmateris.FindAsync(id);
-            if (mmateri == null)
+            var mteacher = await _context.Mteachers.FindAsync(id);
+            if (mteacher == null)
             {
                 return NotFound();
             }
 
-            _context.Mmateris.Remove(mmateri);
+            _context.Mteachers.Remove(mteacher);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool MmateriExists(int id)
+        private bool MteacherExists(int id)
         {
-            return _context.Mmateris.Any(e => e.MateriId == id);
+            return _context.Mteachers.Any(e => e.TeacherId == id);
         }
     }
 }
